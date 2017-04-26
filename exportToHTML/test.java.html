@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>test.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+test.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package  </span><span class="s1">GoogleStockReader; 
+ 
+</span><span class="s0">import </span><span class="s1">java.io.BufferedReader; 
+</span><span class="s0">import </span><span class="s1">java.io.IOException; 
+</span><span class="s0">import </span><span class="s1">java.io.InputStreamReader; 
+</span><span class="s0">import </span><span class="s1">java.net.MalformedURLException; 
+</span><span class="s0">import </span><span class="s1">java.net.URL; 
+</span><span class="s0">import </span><span class="s1">java.net.URLConnection; 
+ 
+</span><span class="s0">public class </span><span class="s1">test { 
+</span><span class="s0">public static void </span><span class="s1">main(String[] argas) </span><span class="s0">throws </span><span class="s1">IOException { 
+ 
+    </span><span class="s0">final </span><span class="s1">String SYM = </span><span class="s2">&quot;KO&quot;</span><span class="s1">; 
+    URL url = </span><span class="s0">new </span><span class="s1">URL(</span><span class="s2">&quot;https://www.google.co.uk/finance?q=NYSE%3AGNC&amp;ei=wYEAWdmhB4S_UbninYAN&quot;</span><span class="s1">); 
+    URLConnection urlConn = url.openConnection(); 
+    InputStreamReader inStream = </span><span class="s0">new </span><span class="s1">InputStreamReader(urlConn.getInputStream()); 
+    BufferedReader buff = </span><span class="s0">new </span><span class="s1">BufferedReader(inStream); 
+ 
+    String line = buff.readLine(); 
+    </span><span class="s0">while</span><span class="s1">(line != </span><span class="s0">null</span><span class="s1">){ 
+        </span><span class="s0">if </span><span class="s1">(line.contains(</span><span class="s2">&quot;[</span><span class="s0">\&quot;</span><span class="s2">KO</span><span class="s0">\&quot;</span><span class="s2">,&quot;</span><span class="s1">)) 
+            System.out.println(line); 
+        line = buff.readLine(); 
+        } 
+        } 
+    } 
+ 
+ 
+</span></pre>
+</body>
+</html>
